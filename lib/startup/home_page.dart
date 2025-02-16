@@ -1,6 +1,5 @@
 // packages
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // pages
@@ -20,7 +19,7 @@ Once signed in, this is the viewable page
 */
 
 class HomePage extends StatefulWidget {
-	const HomePage({Key? key});
+	const HomePage({super.key, Key? key});
 
 	static StreamController<StreamSignal> homePageStream =
 		StreamController<StreamSignal>();
@@ -73,13 +72,13 @@ class HomePageState extends State<HomePage> {
 							centerTitle: true,
 							backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
 							shadowColor: Theme.of(context).colorScheme.shadow,
-							title: Text("Student Health Tracker"),
+							title: const Text("Student Health Tracker"),
 							leading: IconButton(
 									onPressed: () {
 										setState(() {
 											Navigator.push(
 													context,
-													GlobalWidgets.swipePage(Settings(),
+													GlobalWidgets.swipePage(const Settings(),
 															title: 'Settings'));
 										});
 									},
@@ -92,7 +91,7 @@ class HomePageState extends State<HomePage> {
 											Navigator.push(
 													context,
 													GlobalWidgets.swipePage(
-															Account(), title: 'Account'));
+															const Account(), title: 'Account'));
 										},
 										icon: Icon(Icons.person_outline,
 												color: Theme.of(context).colorScheme.onSurface,
