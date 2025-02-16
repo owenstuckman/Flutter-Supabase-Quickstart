@@ -54,3 +54,15 @@ Production:
 ```bash
 flutter run
 ```
+## Editing the App
+
+- The app is built with Flutter and Dart, so you can edit the app by editing the Dart files
+- First Look at `lib/main.dart`
+- This is the main file that runs the app
+- It is a stateful widget that contains the app's state and the app's UI
+- The app's state is stored in the `_MyAppState` class
+- The app's UI is stored in the `build` method
+- From there, explore the home page and the other pages to understand the app's structure and how to edit the app
+- App contains auth, database, and edge functions. Alongside, has a notification system and dynamic themes.
+
+

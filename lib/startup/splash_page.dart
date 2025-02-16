@@ -18,49 +18,50 @@ Page is called in main
  */
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+	const SplashPage({super.key});
 
-  @override
-  SplashPageState createState() => SplashPageState();
+	@override
+	SplashPageState createState() => SplashPageState();
 }
 
 class SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-    _redirect();
-  }
+	@override
+	void initState() {
+		super.initState();
+		_redirect();
+	}
 
-  // redirects based on auth state
-  Future<void> _redirect() async {
+	// redirects based on auth state
+	Future<void> _redirect() async {
 
-    // await for for the widget to mount
-    await Future.delayed(Duration.zero);
+		// await for for the widget to mount
+		await Future.delayed(Duration.zero);
 
-    // get session from supabase
-    final session = supabase.auth.currentSession;
+		// get session from supabase
+		final session = supabase.auth.currentSession;
 
-    if (session == null) {
-      if(mounted){
-        Navigator.of(context)
-            .pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const WelcomePage()),
-                (route) => false);
-      }
-    } else {
-      await DataBase.init();
-      if(mounted){
-        Navigator.of(context)
-            .pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const HomePage()),
-                (route) => false);
-      }
-    }
-  }
+		if (session == null) {
+			if(mounted){
+				Navigator.of(context)
+						.pushAndRemoveUntil(
+						MaterialPageRoute(builder: (context) => const WelcomePage()),
+								(route) => false);
+			}
+		} else {
+			await DataBase.init();
+			if(mounted){
+				Navigator.of(context)
+						.pushAndRemoveUntil(
+						MaterialPageRoute(builder: (context) => const HomePage()),
+								(route) => false);
+			}
+		}
+	}
 
-  @override
-  Widget build(BuildContext context) {
-    return StaticLoad();
-  }
+	@override
+	Widget build(BuildContext context) {
+		// shows the static loading page until the app is redirected
+		return StaticLoad();
+	}
 
 }
