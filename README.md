@@ -28,6 +28,7 @@ flutter pub get
 - Create a new project in Supabase
 
 - Edit the `lib/global_content/dynamic_content/databse.dart`
+- **Edit the url and anonkey to your own supabase project**
 - Making edits to the file will setup calling the supabase API to get dynamic content from the database
 
 4. Setup Supabase Auth
