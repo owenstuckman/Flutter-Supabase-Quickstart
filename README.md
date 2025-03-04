@@ -50,7 +50,7 @@ Production:
 
 ## Running the App
 
-4. Run the app
+6. Run the app
 
 ```bash
 flutter run
